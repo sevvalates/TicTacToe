@@ -115,6 +115,11 @@ export default function Game() {
   // Sort moves based on the isAscending state
   const sortedMoves = isAscending ? moves : moves.slice().reverse();
 
+  function restartGame() {
+    setHistory([{ squares: Array(9).fill(null), location: null }]);
+    setCurrentMove(0);
+  }
+
   return (
     <div className="game">
       <div className="game-board">
@@ -124,6 +129,7 @@ export default function Game() {
         <button onClick={toggleSortOrder}>
           {isAscending ? 'Sort Descending' : 'Sort Ascending'}
         </button>
+        <button onClick={restartGame}>Restart Game</button>
         <ol>{sortedMoves}</ol>
       </div>
     </div>

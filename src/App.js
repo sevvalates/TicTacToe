@@ -17,13 +17,14 @@ function Board({ xIsNext, squares, onPlay , currMove }) {
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
+    //const nextSquares = squares.slice();
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = 'X';
     } else {
       nextSquares[i] = 'O';
     }
-    onPlay(nextSquares); //!!!!update the Board when the user clicks a square
+    onPlay(nextSquares,i); //!!!!update the Board when the user clicks a square
   }
 
   //const winner = calculateWinner(squares);
@@ -64,18 +65,26 @@ function Board({ xIsNext, squares, onPlay , currMove }) {
 }
 
 export default function Game() {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
+  //const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [history, setHistory] = useState([{ squares: Array(9).fill(null), location: null }]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
-  const currentSquares = history[currentMove];
+  const currentSquares = history[currentMove].squares;
   const [isAscending, setIsAscending] = useState(true);
 
   function toggleSortOrder() {
     setIsAscending(!isAscending);
   }
 
-  function handlePlay(nextSquares) {
-    const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
+  function handlePlay(nextSquares, index) {
+    const row = Math.floor(index / 3) + 1; // Calculate row (1-based index)
+    const col = (index % 3) + 1;           // Calculate column (1-based index)
+    const location = `(${row}, ${col})`;
+    const nextHistory = [
+      ...history.slice(0, currentMove + 1),
+      { squares: nextSquares, location: location },
+    ];
+    //const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
     setHistory(nextHistory);
     setCurrentMove(nextHistory.length - 1);
   }
@@ -84,10 +93,10 @@ export default function Game() {
     setCurrentMove(nextMove);
   }
 
-  const moves = history.map((squares, move) => {
+  const moves = history.map((step, move) => {
     let description;
     if (move > 0) {
-        description = 'Go to move #' + move;
+      description = `Go to move #${move} ${step.location}`;
     } else {
       description = 'Go to game start';
     }
@@ -95,7 +104,7 @@ export default function Game() {
     return (
       <li key={move}>
         {move === currentMove ? (
-          <span>You are at move #{move}</span>
+          <span>You are at move #{move} {step.location}</span>
         ) : (
           <button onClick={() => jumpTo(move)}>{description}</button>
         )}

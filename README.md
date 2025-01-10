@@ -10,6 +10,7 @@ A simple React implementation of the classic Tic-Tac-Toe game. This project demo
 - **Move Navigation:** Jump to any move in the game's history to view the board at that point.
 - **Draw Detection:** Displays a message if the game ends in a draw.
 - **Ascending/Descending Order Toggle:** Sort the move history list in ascending or descending order.
+- **Restart Button:** A "Restart Game" button is provided to reset the game state back to its initial condition.
 
 ## Installation
 

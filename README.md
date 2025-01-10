@@ -2,6 +2,10 @@
 
 A simple React implementation of the classic Tic-Tac-Toe game. This project demonstrates the use of React components, state management, and a move history feature with move locations.
 
+This project is a modified and improved version of the official Tic Tac Toe tutorial from React's official website.
+**Original tutorial:** [React Tutorial - Tic Tac Toe](https://react.dev/learn/tutorial-tic-tac-toe)
+
+
 ## Features
 
 - **Classic Gameplay:** Two players take turns placing "X" and "O" on a 3x3 grid.

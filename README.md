@@ -40,5 +40,8 @@ This project is a modified and improved version of the official Tic Tac Toe tuto
    -All squares are filled with no winner (game is a draw).
    
 Use the move history list to jump to a previous game state.
+
 Use "Sort Ascending/Descending" to toggle the sort order of the move history list.
+
+Use "Restart Game" button to restart the game.
 

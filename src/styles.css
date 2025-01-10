@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+.square {
+  background: #fff;               /* Arka plan rengi beyaz */
+  border: 1px solid #999;         /* 1 piksel genişliğinde gri çerçeve */
+  float: left;                    /* Öğeyi sola hizalayarak yan yana dizilmesini sağlar */
+  font-size: 24px;                /* Metin boyutu 24 piksel */
+  font-weight: bold;              /* Metni kalın (bold) yapar */
+  line-height: 34px;              /* Satır yüksekliği 34 piksel, dikey olarak metni ortalar */
+  height: 34px;                   /* Öğenin yüksekliği 34 piksel */
+  margin-right: -1px;             /* Sağ tarafta -1 piksel marjin, çerçevelerin düzgün birleşmesini sağlar */
+  margin-top: -1px;               /* Üst tarafta -1 piksel marjin, çerçevelerin düzgün birleşmesini sağlar */
+  padding: 0;                     /* İç dolgu sıfır, içerik kenarlara yapışık */
+  text-align: center;             /* Metni yatay olarak ortalar */
+  width: 34px;                    /* Öğenin genişliği 34 piksel */
+}
+
+
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+.winning-square {
+  background: yellow; /* Highlight color for winning squares */
+}

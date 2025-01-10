@@ -17,3 +17,23 @@ A simple React implementation of the classic Tic-Tac-Toe game. This project demo
    ```bash
    git clone https://github.com/your-username/tic-tac-toe-react.git
    cd tic-tac-toe-react
+
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   
+3. **Start the Development Server:**
+   ```bash
+   npm start
+
+## How to Play
+
+1. The game starts with "X" as the first player.
+2. Players alternate turns by clicking on any empty square.
+3. The game ends when:
+   -A player gets three of their marks in a row, column, or diagonal (winner is highlighted).
+   -All squares are filled with no winner (game is a draw).
+   
+Use the move history list to jump to a previous game state.
+Use "Sort Ascending/Descending" to toggle the sort order of the move history list.
+
